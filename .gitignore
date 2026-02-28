@@ -3,3 +3,6 @@ target/
 dbt_modules/
 logs/
 dbt_internal_packages/
+
+# Service account keys
+*.json
