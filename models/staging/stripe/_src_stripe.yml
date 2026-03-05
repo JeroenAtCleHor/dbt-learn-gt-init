@@ -1,0 +1,15 @@
+sources:
+  - name: stripe
+    database: dbt-tutorial
+    schema: tstripe
+    tables:
+      - name: payment
+        config:
+          freshness:
+            warn_after:
+              count: 24
+              period: hour
+            error_after:
+              count: 48
+              period: hour
+          loaded_at_field: "CAST(_batched_at AS TIMESTAMP)"

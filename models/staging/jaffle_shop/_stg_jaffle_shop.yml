@@ -1,0 +1,24 @@
+models:
+  - name: stg_jaffle_shop__customers
+    description: "Gestaged klantgegevens uit de jaffle_shop bron."
+    columns:
+      - name: customer_id
+        description: "Primaire sleutel van de klant (afgeleid van id)."
+      - name: first_name
+        description: "Voornaam van de klant."
+      - name: last_name
+        description: "Achternaam van de klant."
+
+  - name: stg_jaffle_shop__orders
+    description: "Gestaged ordergegevens uit de jaffle_shop bron."
+    columns:
+      - name: order_id
+        description: "Primaire sleutel van de order (afgeleid van id)."
+      - name: customer_id
+        description: "Verwijzing naar de klant die de order heeft geplaatst (afgeleid van user_id)."
+      - name: order_date
+        description: "Datum waarop de order is geplaatst."
+      - name: status
+        description: "Status van de order (bijv. placed, shipped, completed, return_pending, returned)."
+      - name: _etl_loaded_at
+        description: "Tijdstip waarop de rij door de ETL is geladen."
